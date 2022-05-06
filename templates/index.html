@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Felix Boerner">
+    <meta name="description" content="BootstrappArrr">
+    <title>BootstrappArrr</title>
+    <link href="/public/assets/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container py-4">
+        <header>
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <span class="fs-4">BootstrappArrr</span>
+                </a>
+            </div>
+
+            <div class="p-3 pb-md-4 mx-auto text-center">
+                <h1 class="display-4 fw-normal">You are only one click away</h1>
+                <p class="fs-5 text-muted">Initialize the automatic deployment of your server with only one click by using
+                    <a href="https://www.ansible.com/">Ansible</a> for your configuration management.<br />Fill in the fields below and click the "Start
+                    Bootstrap" button.<br />You are done!</p>
+            </div>
+
+        </header>
+
+        <main>
+            <div class="row mb-4">
+                <div class="col">
+                    <form action="/api/bootstrap" method="POST" id="formBootstrap">
+                        <div class="mb-4">
+                            <label for="inputHostname" class="form-label">Hostname (FQDN)</label>
+                            <input type="text" class="form-control" name="inputHostname" id="inputHostname"
+                                placeholder="webserver.example.com" aria-describedby="inputHostnameHelp" required>
+                            <div id="inputHostnameHelp" class="form-text">The Fully Qualified Domain Name (FQDN)
+                                of your server e.g. webserver.example.com</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="inputHostgroup" class="form-label">Group name</label>
+                            <input type="text" class="form-control" name="inputHostgroup" id="inputHostgroup"
+                                placeholder="webservers" aria-describedby="inputHostgroupHelp" required>
+                            <div id="inputHostgroupHelp" class="form-text">The Ansible inventory group name where your
+                                server belongs to. For more information see <a
+                                    href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html"
+                                    target="_blank">Ansible
+                                    docs</a></a></div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="inputGitRepo" class="form-label">Git repository URL</label>
+                            <input type="text" class="form-control" name="inputGitRepo" id="inputGitRepo"
+                                placeholder="https://github.com/escalate/ansible-gitops-example-repository.git"
+                                aria-describedby="inputGitRepoHelp" required>
+                            <div id="inputGitRepoHelp" class="form-text">The URL of your Ansible control repository
+                                e.g. <a href="https://github.com/escalate/ansible-gitops-example-repository.git"
+                                    target="_blank">https://github.com/escalate/ansible-gitops-example-repository.git</a>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="inputVaultPassword" class="form-label">Ansible Vault password</label>
+                            <input type="password" class="form-control" name="inputVaultPassword"
+                                id="inputVaultPassword" placeholder="S3cr3t!" aria-describedby="inputVaultPasswordHelp"
+                                required>
+                            <div id="inputVaultPasswordHelp" class="form-text">The secret password to decrypt your
+                                Ansible Vault file. For more information see <a
+                                    href="https://docs.ansible.com/ansible/latest/user_guide/vault.html"
+                                    target="_blank">Ansible docs</a></div>
+                        </div>
+
+                        <div class="text-center">
+                            <button id="buttonBootstrap" type="submit" class="btn btn-primary btn-lg">Start
+                                Bootstrap</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <small class="d-block mb-3 text-muted">BootstrappArrr &copy; 2022</small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/public/assets/js/jquery.min.js"
+        integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+        crossorigin="anonymous"></script>
+
+    <script src="/public/assets/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="/public/assets/js/webui.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
