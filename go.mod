@@ -1,4 +1,4 @@
-module bootstrapparrr
+module github.com/escalate/bootstrapparrr
 
 go 1.18
 
