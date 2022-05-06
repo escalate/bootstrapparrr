@@ -1,8 +1,8 @@
 <p align="center">
-<img src="assets/img/gopherize.png" alt="BootstrappArr" title="BootstrappArr" />
+<img src="assets/img/gopherize.png" alt="BootstrappArrr" title="BootstrappArrr" />
 </p>
 
-# BootstrappArr
+# BootstrappArrr
 
 BootstrappArrr initializes the automatic deployment of your server with only one click by using [Ansible](https://www.ansible.com/) as configuration management tool.
 
