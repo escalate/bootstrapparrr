@@ -125,7 +125,7 @@ func postBootstrap(c *gin.Context) {
 		})
 	} else {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "Bootstrap sucessful",
+			"message": "Bootstrap successful",
 		})
 	}
 }
