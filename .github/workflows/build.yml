@@ -20,3 +20,10 @@ jobs:
           make lint
           make test
           make build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: bootstrapparrr
+          path: bootstrapparrr
+          retention-days: 1

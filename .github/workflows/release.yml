@@ -18,6 +18,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: bootstrapparrr
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
