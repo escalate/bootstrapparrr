@@ -1,14 +1,6 @@
 SHELL = /bin/bash
 .SHELLFLAGS = -e -o pipefail -c
-PROJECT_NAME := "bootstrapparrr"
-
-.PHONY: build
-build:
-	go build .
-
-.PHONY: run
-run:
-	go run main.go
+.DEFAULT_GOAL := build-snapshot
 
 .PHONY: lint
 lint:
@@ -18,10 +10,18 @@ lint:
 test:
 	go test -v -cover ./...
 
-.PHONY: tidy
-tidy:
-	go mod tidy
+.PHONY: build
+build:
+	goreleaser build
 
-.PHONY: clean
-clean:
-	rm --force $(PROJECT_NAME)
+.PHONY: build-snapshot
+build-snapshot:
+	goreleaser build --single-target --snapshot --rm-dist
+
+.PHONY: run
+run:
+	go run main.go
+
+.PHONY: release
+release:
+	goreleaser release --release-notes CHANGELOG.md --rm-dist

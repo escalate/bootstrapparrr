@@ -2,7 +2,8 @@ preset: angular
 plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
-  - - '@semantic-release/github'
-    - assets:
-      - path: "bootstrapparrr"
-        label: "bootstrapparrr"
+  - "@semantic-release/changelog"
+  - "@semantic-release/git"
+  - - "@semantic-release/exec"
+    - publishCmd: make build
+  - "@semantic-release/github"
