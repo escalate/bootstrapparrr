@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/escalate/bootstrapparrr/compare/v1.4.1...v1.4.2) (2022-05-09)
+
+
+### Bug Fixes
+
+* use release-notes file ([653dc2d](https://github.com/escalate/bootstrapparrr/commit/653dc2dbfd8db3f3fa337f7e4cead2577e6fc736))
+
 ## [1.4.1](https://github.com/escalate/bootstrapparrr/compare/v1.4.0...v1.4.1) (2022-05-09)
 
 
