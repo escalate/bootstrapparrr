@@ -1,6 +1,6 @@
 SHELL = /bin/bash
 .SHELLFLAGS = -e -o pipefail -c
-.DEFAULT_GOAL := build-snapshot
+.DEFAULT_GOAL := build
 
 .PHONY: lint
 lint:
@@ -12,10 +12,6 @@ test:
 
 .PHONY: build
 build:
-	goreleaser build
-
-.PHONY: build-snapshot
-build-snapshot:
 	goreleaser build --single-target --snapshot --rm-dist
 
 .PHONY: run
