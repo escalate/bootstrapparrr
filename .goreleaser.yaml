@@ -22,6 +22,7 @@ builds:
 archives:
   - format: tar.gz
     files:
+      - CHANGELOG.md
       - LICENSE
     wrap_in_directory: true
 
