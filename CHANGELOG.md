@@ -23,3 +23,25 @@
 ### Features
 
 * use goreleaser ([b3bcce3](https://github.com/escalate/bootstrapparrr/commit/b3bcce3fb0231b4a7a7f5649b046ed658c401cd0))
+
+# [1.1.0](https://github.com/escalate/bootstrapparrr/compare/v1.0.1...v1.1.0) (2022-05-07)
+
+
+### Features
+
+* add assets to release ([0073b5b](https://github.com/escalate/bootstrapparrr/commit/0073b5b245a98125d8f05e4ed5edb6a67a7d91ad))
+
+## [1.0.1](https://github.com/escalate/bootstrapparrr/compare/v1.0.0...v1.0.1) (2022-05-06)
+
+
+### Bug Fixes
+
+* change misspelled word ([5fbb77a](https://github.com/escalate/bootstrapparrr/commit/5fbb77aba4630656c6e9831a0d4789f683dbed7f))
+
+# 1.0.0 (2022-05-06)
+
+
+### Features
+
+* add initial version of bootstrapparrr ([ea80680](https://github.com/escalate/bootstrapparrr/commit/ea8068023aa66e066d968be6672383f1cf8ccc02))
+* change module path ([3c38036](https://github.com/escalate/bootstrapparrr/commit/3c38036ab29804fdde25e337a66b151c6207cf01))
