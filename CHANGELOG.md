@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/escalate/bootstrapparrr/compare/v1.3.0...v1.4.0) (2022-05-09)
+
+
+### Features
+
+* add changelog to release ([3655e97](https://github.com/escalate/bootstrapparrr/commit/3655e977e2470f9dcfe6feb8989176d9883d99f5))
+
 # [1.3.0](https://github.com/escalate/bootstrapparrr/compare/v1.2.0...v1.3.0) (2022-05-09)
 
 
