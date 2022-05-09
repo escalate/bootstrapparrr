@@ -17,7 +17,3 @@ build:
 .PHONY: run
 run:
 	go run main.go
-
-.PHONY: release
-release:
-	goreleaser release --release-notes CHANGELOG.md --rm-dist
