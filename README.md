@@ -2,7 +2,7 @@
 <img src="assets/img/gopherize.png" alt="BootstrappArrr" title="BootstrappArrr" />
 </p>
 
-[![Build](https://github.com/escalate/bootstrapparrr/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/escalate/bootstrapparrr/actions/workflows/build.yml)
+[![Test](https://github.com/escalate/bootstrapparrr/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/escalate/bootstrapparrr/actions/workflows/test.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/escalate/bootstrapparrr)](https://goreportcard.com/report/github.com/escalate/bootstrapparrr)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/escalate/bootstrapparrr/blob/master/LICENSE)
 
