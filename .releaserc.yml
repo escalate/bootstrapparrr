@@ -5,5 +5,5 @@ plugins:
   - "@semantic-release/changelog"
   - "@semantic-release/git"
   - - "@semantic-release/exec"
-    - publishCmd: make build
-  - "@semantic-release/github"
+    - publishCmd: make release
+  # - "@semantic-release/github"
