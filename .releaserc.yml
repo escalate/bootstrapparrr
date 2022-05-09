@@ -5,4 +5,6 @@ plugins:
   - "@semantic-release/changelog"
   - "@semantic-release/git"
   - - "@semantic-release/exec"
-    - publishCmd: goreleaser release --release-notes <(${nextRelease.notes}) --rm-dist
+    - publishCmd: |
+        echo "${nextRelease.notes}" > /tmp/release-notes.md
+        goreleaser release --release-notes /tmp/release-notes.md --rm-dist
