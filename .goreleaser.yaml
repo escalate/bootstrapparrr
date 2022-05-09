@@ -24,3 +24,6 @@ archives:
     files:
       - LICENSE
     wrap_in_directory: true
+
+checksum:
+  name_template: "{{ .ProjectName }}_{{ .Version }}_sha256_checksums.txt"
