@@ -28,3 +28,4 @@ archives:
 
 checksum:
   name_template: "{{ .ProjectName }}_{{ .Version }}_sha256_checksums.txt"
+  algorithm: sha256
