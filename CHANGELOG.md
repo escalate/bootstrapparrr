@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/escalate/bootstrapparrr/compare/v1.4.2...v1.4.3) (2022-05-11)
+
+
+### Bug Fixes
+
+* update integrity sha ([112d187](https://github.com/escalate/bootstrapparrr/commit/112d1876a776c1c337bb6223d3c95233a010600a))
+
 ## [1.4.2](https://github.com/escalate/bootstrapparrr/compare/v1.4.1...v1.4.2) (2022-05-09)
 
 
