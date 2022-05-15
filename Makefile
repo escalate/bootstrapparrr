@@ -12,8 +12,20 @@ test:
 
 .PHONY: build
 build:
-	goreleaser build --single-target --snapshot --rm-dist
+	go build -v -o ./dist/ ./...
 
 .PHONY: run
 run:
 	go run main.go
+
+.PHONY: lint-dockerfile
+lint-dockerfile:
+	find $(PWD) -name Dockerfile* -print0 | xargs -0 -I % hadolint %
+
+.PHONY: build-docker-image
+build-docker-image:
+	docker-compose build
+
+.PHONY: run-docker-image
+run-docker-image:
+	docker-compose up

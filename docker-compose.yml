@@ -1,0 +1,14 @@
+services:
+  bootstrapparrr:
+    image: bootstrapparrr:${GITHUB_SHA:-dev}
+    build:
+      context: .
+      args:
+        GOLANG_VERSION: ${GOLANG_VERSION:-1.18}
+        GOOS: ${GOOS:-linux}
+        GOARCH: ${GOARCH:-amd64}
+        GIN_MODE: ${GIN_MODE:-release}
+    ports:
+      - 5000:5000
+    environment:
+      GIN_MODE: ${GIN_MODE:-debug}
