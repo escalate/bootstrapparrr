@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/escalate/bootstrapparrr/compare/v1.4.3...v1.5.0) (2022-05-15)
+
+
+### Features
+
+* add container build ([6b219ad](https://github.com/escalate/bootstrapparrr/commit/6b219adcb74d51a77301127b0b6d81f47691e37f))
+
 ## [1.4.3](https://github.com/escalate/bootstrapparrr/compare/v1.4.2...v1.4.3) (2022-05-11)
 
 
