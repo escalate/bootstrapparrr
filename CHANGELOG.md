@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/escalate/bootstrapparrr/compare/v1.5.0...v1.6.0) (2024-01-06)
+
+
+### Features
+
+* bump go version to 1.21 ([ae7a806](https://github.com/escalate/bootstrapparrr/commit/ae7a8065e5400553998a2610cad52709c1926010))
+
 # [1.5.0](https://github.com/escalate/bootstrapparrr/compare/v1.4.3...v1.5.0) (2022-05-15)
 
 
