@@ -254,3 +254,19 @@ jobs:
         if: steps.check_go.outputs.files_exists == 'true'
         run: |
           go test -v -cover ./...
+
+      - name: Install staticcheck
+        if: steps.check_go.outputs.files_exists == 'true'
+        run: |
+          gh release download --pattern "*linux_amd64.tar.gz" --dir /tmp
+          tar --extract --gzip --strip-components 1 --file /tmp/staticcheck_linux_amd64.tar.gz --directory /tmp
+          chmod +x /tmp/staticcheck
+          mv /tmp/staticcheck /usr/local/bin/staticcheck
+        env:
+          GH_REPO: dominikh/go-tools
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Run staticcheck
+        if: steps.check_go.outputs.files_exists == 'true'
+        run: |
+          staticcheck
