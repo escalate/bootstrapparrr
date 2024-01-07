@@ -5,15 +5,13 @@ name: Tests
       - master
   pull_request:
 jobs:
-  editorconfig:
-    name: Editorconfig
+  editorconfig-checker:
+    name: editorconfig-checker
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install latest editorconfig-checker version
-        run: |
+      - run: |
           gh release download --pattern "*linux-amd64.tar.gz" --dir /tmp
           tar --extract --gzip --strip-components 1 --file /tmp/ec-linux-amd64.tar.gz --directory /tmp
           chmod +x /tmp/ec-linux-amd64
@@ -22,8 +20,7 @@ jobs:
           GH_REPO: editorconfig-checker/editorconfig-checker
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - name: Run editorconfig-checker
-        run: |
+      - run: |
           ec
 
   dockerfile:
