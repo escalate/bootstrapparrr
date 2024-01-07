@@ -89,7 +89,7 @@ func bootstrap(hostname string, hostgroup string, git string, vault string) erro
 
 	ansibleVaultPassword := configFile{
 		filename: "/etc/ansible/.vault_pass.txt",
-		content:  fmt.Sprintf("%s", vault),
+		content:  vault,
 	}
 
 	if err := writeConfigFile(ansibleVaultPassword); err != nil {
