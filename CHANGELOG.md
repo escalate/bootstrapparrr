@@ -1,3 +1,17 @@
+# [1.7.0](https://github.com/escalate/bootstrapparrr/compare/v1.6.0...v1.7.0) (2024-01-07)
+
+
+### Bug Fixes
+
+* use correct exec path ([c9e57ed](https://github.com/escalate/bootstrapparrr/commit/c9e57edb178e1e15f309fb675578f6811858bcfe))
+
+
+### Features
+
+* improve go code ([108ab67](https://github.com/escalate/bootstrapparrr/commit/108ab67be06e190985b6c56cace1eccbdfadfece))
+* improve go code ([98d62f3](https://github.com/escalate/bootstrapparrr/commit/98d62f36ca63618565d48c954f1d7272a53960c8))
+* remove deprecated package ([fd0f288](https://github.com/escalate/bootstrapparrr/commit/fd0f2883ea7076128286fac24ed6fbd7126fc045))
+
 # [1.6.0](https://github.com/escalate/bootstrapparrr/compare/v1.5.0...v1.6.0) (2024-01-06)
 
 
