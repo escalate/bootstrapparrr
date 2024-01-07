@@ -257,4 +257,8 @@ jobs:
 
       - name: bla
         run: |
-          echo "${{ steps.check_go.outputs.files_exists }}"
+          if [[ "${{ steps.check_go.outputs.files_exists }}" == "true" ]]; then
+            echo "OK"
+          else
+            echo "NOT OK"
+          fi
