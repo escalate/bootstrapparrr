@@ -257,6 +257,4 @@ jobs:
 
       - name: bla
         run: |
-          echo "${{ github.event.steps.check_go.outputs.files_exists }}"
-          echo "${{ github.steps.check_go.outputs.files_exists }}"
-          echo "${{ github.inputs.check_go.outputs.files_exists }}"
+          echo "${{ steps.check_go.outputs.files_exists }}"
