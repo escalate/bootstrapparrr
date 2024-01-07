@@ -4,7 +4,7 @@ import (
 	"embed"
 	"fmt"
 	"html/template"
-	"io/ioutil"
+	"ioutil"
 	"log"
 	"net/http"
 	"os/exec"
