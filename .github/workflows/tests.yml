@@ -247,7 +247,7 @@ jobs:
           go test -v -cover ./...
 
       - name: bla
-        run:
+        run: echo
 
       - run: |
           echo "blub"
