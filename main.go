@@ -4,10 +4,9 @@ import (
 	"embed"
 	"fmt"
 	"html/template"
-	"ioutil"
 	"log"
 	"net/http"
-	"os/exec"
+	"os"
 	"reflect"
 	"runtime"
 	"strings"
@@ -20,7 +19,7 @@ var f embed.FS
 
 func runCommand(cmd string) error {
 	args := strings.Fields(cmd)
-	out, err := exec.Command(args[0], args[1:]...).Output()
+	out, err := os.exec.Command(args[0], args[1:]...).Output()
 	log.Printf("%s", out)
 	if err != nil {
 		return err
@@ -43,7 +42,7 @@ func writeConfigFile(c configFile) error {
 	filename := getFieldString(&c, "filename")
 	content := getFieldString(&c, "content")
 
-	if err := ioutil.WriteFile(filename, []byte(content), 0644); err != nil {
+	if err := os.WriteFile(filename, []byte(content), 0644); err != nil {
 		return fmt.Errorf("%v for file %v", err, filename)
 	}
 
