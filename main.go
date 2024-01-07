@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"os/exec"
 	"reflect"
 	"runtime"
 	"strings"
@@ -19,7 +20,7 @@ var f embed.FS
 
 func runCommand(cmd string) error {
 	args := strings.Fields(cmd)
-	out, err := os.exec.Command(args[0], args[1:]...).Output()
+	out, err := exec.Command(args[0], args[1:]...).Output()
 	log.Printf("%s", out)
 	if err != nil {
 		return err
