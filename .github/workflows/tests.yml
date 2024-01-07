@@ -5,13 +5,15 @@ name: Tests
       - master
   pull_request:
 jobs:
-  editorconfig-checker:
-    name: editorconfig-checker
+  editorconfig:
+    name: Editorconfig
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - run: |
+      - name: Install editorconfig-checker
+        run: |
           gh release download --pattern "*linux-amd64.tar.gz" --dir /tmp
           tar --extract --gzip --strip-components 1 --file /tmp/ec-linux-amd64.tar.gz --directory /tmp
           chmod +x /tmp/ec-linux-amd64
@@ -20,7 +22,8 @@ jobs:
           GH_REPO: editorconfig-checker/editorconfig-checker
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - run: |
+      - name: Run editorconfig-checker
+        run: |
           ec
 
   dockerfile:
@@ -36,7 +39,7 @@ jobs:
         with:
           files: "**/Dockerfile*"
 
-      - name: Install latest hadolint version
+      - name: Install hadolint
         if: steps.check_dockerfile.outputs.files_exists == 'true'
         run: |
           gh release download --pattern "*Linux-x86_64" --dir /tmp
@@ -64,7 +67,7 @@ jobs:
         with:
           files: "**/*.sh"
 
-      - name: Install latest shellcheck version
+      - name: Install shellcheck
         if: steps.check_shell.outputs.files_exists == 'true'
         run: |
           gh release download --pattern "*linux.x86_64.tar.xz" --dir /tmp
@@ -93,7 +96,7 @@ jobs:
         with:
           files: "**/*.yml"
 
-      - name: Install latest yamllint version
+      - name: Install yamllint
         if: steps.check_yaml.outputs.files_exists == 'true'
         run: |
           pip3 install --disable-pip-version-check yamllint
@@ -116,7 +119,7 @@ jobs:
         with:
           files: "**/*.py"
 
-      - name: Install latest flake8 version
+      - name: Install flake8
         if: steps.check_python.outputs.files_exists == 'true'
         run: |
           pip3 install --disable-pip-version-check flake8
@@ -126,7 +129,7 @@ jobs:
         run: |
           flake8 --show-source .
 
-      - name: Install latest isort version
+      - name: Install isort
         if: steps.check_python.outputs.files_exists == 'true'
         run: |
           pip3 install --disable-pip-version-check isort[colors]
@@ -135,6 +138,27 @@ jobs:
         if: steps.check_python.outputs.files_exists == 'true'
         run: |
           isort . --check-only --diff --color
+
+      - name: Check for Tox file
+        id: check_tox
+        uses: andstor/file-existence-action@v2
+        with:
+          files: "tox.ini"
+
+      - name: Install tox
+        if: steps.check_tox.outputs.files_exists == 'true'
+        run: |
+          pip3 install --disable-pip-version-check tox
+
+      - name: Install test dependencies
+        if: steps.check_tox.outputs.files_exists == 'true'
+        run: |
+          make dev-requirements
+
+      - name: Run tox
+        if: steps.check_tox.outputs.files_exists == 'true'
+        run: |
+          tox
 
   ansible:
     name: Ansible
@@ -155,12 +179,12 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install latest ansible version
+      - name: Install ansible
         if: steps.check_ansible.outputs.files_exists == 'true'
         run: |
           pip3 install --disable-pip-version-check ansible
 
-      - name: Install latest ansible-lint version
+      - name: Install ansible-lint
         if: steps.check_ansible.outputs.files_exists == 'true'
         run: |
           pip3 install --disable-pip-version-check ansible-lint
@@ -170,36 +194,13 @@ jobs:
         run: |
           ansible-lint --force-color .
 
-  molecule:
-    name: Molecule
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
       - name: Check for Molecule files
         id: check_molecule
         uses: andstor/file-existence-action@v2
         with:
           files: "molecule"
 
-      - name: Set up Python 3.x
-        if: steps.check_molecule.outputs.files_exists == 'true'
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install latest ansible version
-        if: steps.check_molecule.outputs.files_exists == 'true'
-        run: |
-          pip3 install --disable-pip-version-check ansible
-
-      - name: Install latest ansible-lint version
-        if: steps.check_molecule.outputs.files_exists == 'true'
-        run: |
-          pip3 install --disable-pip-version-check ansible-lint
-
-      - name: Install latest molecule version
+      - name: Install molecule
         if: steps.check_molecule.outputs.files_exists == 'true'
         run: |
           pip3 install --disable-pip-version-check molecule molecule-plugins[docker] pytest-testinfra
@@ -208,40 +209,6 @@ jobs:
         if: steps.check_molecule.outputs.files_exists == 'true'
         run: |
           molecule test --all
-
-  tox:
-    name: Tox
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Check for Tox file
-        id: check_tox
-        uses: andstor/file-existence-action@v2
-        with:
-          files: "tox.ini"
-
-      - name: Set up Python 3.x
-        if: steps.check_tox.outputs.files_exists == 'true'
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install latest tox version
-        if: steps.check_tox.outputs.files_exists == 'true'
-        run: |
-          pip3 install --disable-pip-version-check tox
-
-      - name: Install test dependencies
-        if: steps.check_tox.outputs.files_exists == 'true'
-        run: |
-          make dev-requirements
-
-      - name: Run tox
-        if: steps.check_tox.outputs.files_exists == 'true'
-        run: |
-          tox
 
   docker-compose:
     name: Docker-Compose
