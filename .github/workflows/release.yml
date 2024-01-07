@@ -31,6 +31,8 @@ jobs:
       - name: Set up Go
         if: steps.check_go.outputs.files_exists == 'true'
         uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
 
       - name: Install GoReleaser
         if: steps.check_go.outputs.files_exists == 'true'

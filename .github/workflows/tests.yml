@@ -244,6 +244,8 @@ jobs:
       - name: Set up Go
         if: steps.check_go.outputs.files_exists == 'true'
         uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
 
       - name: Run go vet
         if: steps.check_go.outputs.files_exists == 'true'
