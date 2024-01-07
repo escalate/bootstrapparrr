@@ -44,13 +44,11 @@ jobs:
           node-version: 'lts/*'
 
       - name: Create Github release
-        if: steps.check_go.outputs.files_exists == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx -p @semantic-release/changelog -p @semantic-release/exec -p @semantic-release/git semantic-release
-
-      - name: Create Github release
-        if: steps.check_go.outputs.files_exists == 'false'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
+        run: |
+          if [[ "${{ steps.check_go.outputs.files_exists }}" == "true" ]]; then
+            npx -p @semantic-release/changelog -p @semantic-release/exec -p @semantic-release/git semantic-release
+          else
+            npx semantic-release
+          fi

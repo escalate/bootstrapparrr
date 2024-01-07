@@ -254,11 +254,3 @@ jobs:
         if: steps.check_go.outputs.files_exists == 'true'
         run: |
           go test -v -cover ./...
-
-      - name: bla
-        run: |
-          if [[ "${{ steps.check_go.outputs.files_exists }}" == "true" ]]; then
-            echo "OK"
-          else
-            echo "NOT OK"
-          fi
