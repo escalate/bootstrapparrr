@@ -235,14 +235,23 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Check for Go files
+        id: check_go
+        uses: andstor/file-existence-action@v2
+        with:
+          files: "**/*.go"
+
       - name: Set up Go
+        if: steps.check_go.outputs.files_exists == 'true'
         uses: actions/setup-go@v5
 
       - name: Run go vet
+        if: steps.check_go.outputs.files_exists == 'true'
         run: |
           go vet ./...
 
       - name: Run go test
+        if: steps.check_go.outputs.files_exists == 'true'
         run: |
           go test -v -cover ./...
 
