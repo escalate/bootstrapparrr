@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/escalate/bootstrapparrr/compare/v1.7.0...v1.8.0) (2024-01-07)
+
+
+### Features
+
+* use stable go version ([0c9a0cb](https://github.com/escalate/bootstrapparrr/commit/0c9a0cb13e4648c494fb80acfcdc84569bc07d39))
+
 # [1.7.0](https://github.com/escalate/bootstrapparrr/compare/v1.6.0...v1.7.0) (2024-01-07)
 
 
