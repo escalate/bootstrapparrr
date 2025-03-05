@@ -1,0 +1,6 @@
+*.yml
+*.yaml
+*.min.css
+*.min.js
+templates/
+CHANGELOG.md
