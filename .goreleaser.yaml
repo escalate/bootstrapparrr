@@ -22,7 +22,7 @@ builds:
       - CGO_ENABLED=0
 
 archives:
-  - formats: [ 'tar.gz' ]
+  - formats: ['tar.gz']
     files:
       - CHANGELOG.md
       - LICENSE
