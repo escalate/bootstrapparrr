@@ -1,3 +1,9 @@
+## [1.9.0](https://github.com/escalate/bootstrapparrr/compare/v1.8.0...v1.9.0) (2025-04-15)
+
+### Features
+
+* update golang ([0ed346d](https://github.com/escalate/bootstrapparrr/commit/0ed346d7debd202a1a22682ebe7815a27e2b8cf7))
+
 # [1.8.0](https://github.com/escalate/bootstrapparrr/compare/v1.7.0...v1.8.0) (2024-01-07)
 
 
