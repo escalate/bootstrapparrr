@@ -1,3 +1,9 @@
+## [1.9.1](https://github.com/escalate/bootstrapparrr/compare/v1.9.0...v1.9.1) (2025-05-22)
+
+### Bug Fixes
+
+* **deps:** update module github.com/gin-gonic/gin to v1.10.1 ([c403779](https://github.com/escalate/bootstrapparrr/commit/c403779ad19a1333ecc380261b02346f9a061076))
+
 ## [1.9.0](https://github.com/escalate/bootstrapparrr/compare/v1.8.0...v1.9.0) (2025-04-15)
 
 ### Features
