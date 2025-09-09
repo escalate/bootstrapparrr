@@ -1,3 +1,9 @@
+## [1.10.0](https://github.com/escalate/bootstrapparrr/compare/v1.9.1...v1.10.0) (2025-09-09)
+
+### Features
+
+* update go version ([22edbef](https://github.com/escalate/bootstrapparrr/commit/22edbef944078629fb8e863f4500f664c638c744))
+
 ## [1.9.1](https://github.com/escalate/bootstrapparrr/compare/v1.9.0...v1.9.1) (2025-05-22)
 
 ### Bug Fixes
