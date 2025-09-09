@@ -1,3 +1,9 @@
+## [1.11.0](https://github.com/escalate/bootstrapparrr/compare/v1.10.0...v1.11.0) (2025-09-09)
+
+### Features
+
+* ignore release config ([7ffb8d1](https://github.com/escalate/bootstrapparrr/commit/7ffb8d1455372442124680746527d7cc7fc646bf))
+
 ## [1.10.0](https://github.com/escalate/bootstrapparrr/compare/v1.9.1...v1.10.0) (2025-09-09)
 
 ### Features
